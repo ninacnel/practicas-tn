@@ -1,5 +1,5 @@
-import React from 'react';
 import Product from './Product';
+import PropTypes from 'prop-types';
 
 const Products = ({ products }) => {
     return (
@@ -9,6 +9,9 @@ const Products = ({ products }) => {
             ))}
         </div>
     );
-}
+};
 
+Products.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 export default Products;

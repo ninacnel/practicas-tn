@@ -1,8 +1,8 @@
-const Beers = ({beers}) => {
-    // Suponiendo un tipo de cambio de USD a Pesos Argentinos
-    const exchangeRate = 350; // Ejemplo de tipo de cambio
+import PropTypes from 'prop-types';
 
-    // Convertir los precios de USD a Pesos Argentinos
+const Beers = ({beers}) => {
+    const exchangeRate = 350;
+
     const beersInARS = beers.map(beer => ({
         ...beer,
         priceInARS: beer.price * exchangeRate
@@ -23,5 +23,17 @@ const Beers = ({beers}) => {
         </div>
     );
 }
+
+Beers.propTypes = {
+    beers: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            beerName: PropTypes.string.isRequired,
+            beerStyle: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            available: PropTypes.bool.isRequired,
+        })
+    ).isRequired,
+};
 
 export default Beers;

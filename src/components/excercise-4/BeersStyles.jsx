@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const BeersStyles = ({ beers }) => {
     // Crear un conjunto de estilos únicos usando Set
     const beerStyles = [...new Set(beers.map(beer => beer.beerStyle))];
@@ -13,5 +15,17 @@ const BeersStyles = ({ beers }) => {
         </div>
     );
 }
+
+BeersStyles.propTypes = {
+    beers: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            beerName: PropTypes.string.isRequired,
+            beerStyle: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            available: PropTypes.bool.isRequired,
+        })
+    ).isRequired,
+};
 
 export default BeersStyles;

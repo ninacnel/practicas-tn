@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
+
 const BeersCount = ({ beers }) => {
-    // Filtrar y contar cervezas de estilo Red e IPA
     const redBeersCount = beers.filter(beer => beer.beerStyle === "Red").length;
     const ipaBeersCount = beers.filter(beer => beer.beerStyle === "IPA").length;
 
@@ -11,5 +12,17 @@ const BeersCount = ({ beers }) => {
         </div>
     );
 }
+
+BeersCount.propTypes = {
+    beers: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            beerName: PropTypes.string.isRequired,
+            beerStyle: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            available: PropTypes.bool.isRequired,
+        })
+    ).isRequired,
+};
 
 export default BeersCount;
