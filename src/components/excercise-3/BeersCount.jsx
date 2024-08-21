@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 const BeersCount = ({ beers }) => {
-    const redBeersCount = beers.filter(beer => beer.beerStyle === "Red").length;
-    const ipaBeersCount = beers.filter(beer => beer.beerStyle === "IPA").length;
+    const redBeersCount = beers.filter((beer) => beer.beerStyle === "Red").length;
+    const ipaBeersCount = beers.filter((beer) => beer.beerStyle === "IPA").length;
 
     return (
         <div>

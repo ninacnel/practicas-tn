@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 
 const BeersStyles = ({ beers }) => {
-    // Crear un conjunto de estilos únicos usando Set
-    const beerStyles = [...new Set(beers.map(beer => beer.beerStyle))];
+    // el Set es una coleccion propia de JS que nos evita elementos duplicados
+    // como crea un objeto usamos spread para distribuir cada elem unico en un arreglo
+    const beerStyles = [...new Set(beers.map((beer) => beer.beerStyle))];
 
     return (
         <div>

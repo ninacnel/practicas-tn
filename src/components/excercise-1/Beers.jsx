@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
 
+// recordar destructurar 
 const Beers = ({beers}) => {
-    const exchangeRate = 350;
+    const exchangeRate = 1200;
 
-    const beersInARS = beers.map(beer => ({
+    const beersInARS = beers.map((beer) => ({
         ...beer,
-        priceInARS: beer.price * exchangeRate
+        price: beer.price * exchangeRate
     }));
 
     return (
         <div>
             <h1>Lista de Cervezas</h1>
             <ul>
-                {beersInARS.map(beer => (
+                {beersInARS.map((beer) => (
                     <li key={beer.id}>
                         <strong>{beer.beerName}</strong> ({beer.beerStyle}) - 
-                        Precio: ${beer.priceInARS} ARS - 
-                        {beer.available ? "Disponible" : "No Disponible"}
+                        Precio: ${beer.price}
                     </li>
                 ))}
             </ul>
