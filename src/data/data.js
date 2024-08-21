@@ -63,3 +63,15 @@ export const beers = [
         available: false,
     },
 ];
+
+export const products = ["table", "couch", "chair1", "chair2"];
+
+export const names = ["Parker","Simmons","Lewis","Poe"];
+
+export const persons = [
+    { name: 'Juan', age: 26 },
+    { name: 'Gabriel', age: 27 },
+    { name: 'Valentina', age: 22 },
+    { name: 'Paula', age: 25 },
+    { name: 'Andrés', age: 20 }
+  ];
