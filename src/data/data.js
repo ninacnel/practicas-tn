@@ -1,4 +1,4 @@
-export const beers = [
+export const initialBeers = [
     {
         id: 1,
         beerName: "American",
