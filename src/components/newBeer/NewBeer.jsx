@@ -10,7 +10,7 @@ const NewBeer = ({ onAddBeer }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const newBeer = {
-            id: Date.now(), //  para generar id unico
+            id: Math.floor(Math.random() * 1000000),  //  para generar id unico
             beerName,
             beerStyle,
             price: parseFloat(price),
