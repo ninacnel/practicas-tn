@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types';
 import "./BeerItem.css"
 
 const BeerItem = ({ beerName, beerStyle, price, available }) => {
@@ -18,5 +19,12 @@ const BeerItem = ({ beerName, beerStyle, price, available }) => {
         </div>
     )
 }
+
+BeerItem.propTypes = {
+    beerName: PropTypes.string,
+    beerStyle: PropTypes.string, 
+    price: PropTypes.number, 
+    available: PropTypes.bool,
+};
 
 export default BeerItem

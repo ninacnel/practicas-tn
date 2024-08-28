@@ -23,7 +23,7 @@ const Beers = () => {
     return (
         <div>
             <button type="button" className="btn btn-primary" onClick={changeDollarHandler}>{changeDollar ? 'Esconder': 'Actualizar precio del dolar' }</button>
-            {changeDollar && <ChangeDollar setDollarHandler={setDollarHandler} dollar={dollar}/>}
+            {changeDollar && <ChangeDollar onDollarChange={setDollarHandler} dollar={dollar}/>}
             <hr/>
             <h1>EJERCICIO 1</h1>
             <div className='beers'>

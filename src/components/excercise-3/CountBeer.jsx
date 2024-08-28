@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types';
 
 const CountBeer = ({ beers }) => {
     const countRed = beers.filter((beer) => beer.beerStyle === "Red").length;
@@ -11,5 +11,17 @@ const CountBeer = ({ beers }) => {
         </div>
     )
 }
+
+CountBeer.propTypes = {
+    beers: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            beerName: PropTypes.string.isRequired,
+            beerStyle: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            available: PropTypes.bool.isRequired,
+        })
+    ).isRequired,
+};
 
 export default CountBeer

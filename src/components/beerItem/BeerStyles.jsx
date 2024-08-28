@@ -1,7 +1,7 @@
-import React from 'react'
+import PropTypes from 'prop-types';
 
 const BeerStyles = ({ beers }) => {
-    const beerStyles = [...new Set(beers.map(beer => beer.beerStyle))];
+    const beerStyles = [...new Set(beers.map((beer) => beer.beerStyle))];
 
     return (
         <div>
@@ -12,7 +12,19 @@ const BeerStyles = ({ beers }) => {
                 ))}
             </ul>
         </div>
-    )
+    );
 }
 
-export default BeerStyles
+BeerStyles.propTypes = {
+    beers: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            beerName: PropTypes.string.isRequired,
+            beerStyle: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            available: PropTypes.bool.isRequired,
+        })
+    ).isRequired,
+};
+
+export default BeerStyles;
