@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import BeerItem from '../beerItem/BeerItem';
 
 const AvailableBeers = ({beers}) => {
     const availableBeers = beers.filter((beer) => beer.available);
@@ -7,10 +8,15 @@ const AvailableBeers = ({beers}) => {
         <div>
             <h1>Cervezas Disponibles</h1>
             <ul>
-                {availableBeers.map((beer) => (
-                    <li key={beer.id}>
-                        <strong>{beer.beerName}</strong> ({beer.beerStyle})
-                    </li>
+                {availableBeers
+                .map((beer) => (
+                    <BeerItem
+                    key={beer.id}
+                    beerName={beer.beerName}
+                    beerStyle={beer.beerStyle}
+                    beerPrice={beer.price}
+                    available={beer.available}
+                    />
                 ))}
             </ul>
         </div>

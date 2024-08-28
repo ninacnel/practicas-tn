@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import BeerItem from '../beerItem/BeerItem';
 
 // recordar destructurar 
 const Beers = ({beers}) => {
@@ -14,10 +15,13 @@ const Beers = ({beers}) => {
             <h1>Lista de Cervezas</h1>
             <ul>
                 {beersInARS.map((beer) => (
-                    <li key={beer.id}>
-                        <strong>{beer.beerName}</strong> ({beer.beerStyle}) - 
-                        Precio: ${beer.price}
-                    </li>
+                    <BeerItem
+                    key={beer.id}
+                    beerName={beer.beerName}
+                    beerStyle={beer.beerStyle}
+                    beerPrice={beer.price}
+                    available={beer.available}
+                    />
                 ))}
             </ul>
         </div>

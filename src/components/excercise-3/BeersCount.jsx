@@ -5,11 +5,13 @@ const BeersCount = ({ beers }) => {
     const ipaBeersCount = beers.filter((beer) => beer.beerStyle === "IPA").length;
 
     return (
-        <div>
-            <h1>Conteo de Cervezas por Estilo</h1>
-            <p>Cervezas estilo Red: {redBeersCount}</p>
-            <p>Cervezas estilo IPA: {ipaBeersCount}</p>
-        </div>
+        <>
+            <div>
+                <h1>Conteo de Cervezas por Estilo</h1>
+                <p>Cervezas estilo Red: {redBeersCount}</p>
+                <p>Cervezas estilo IPA: {ipaBeersCount}</p>
+            </div>
+        </>
     );
 }
 
