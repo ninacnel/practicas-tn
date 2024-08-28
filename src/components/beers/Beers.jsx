@@ -10,41 +10,43 @@ import { initialBeers } from '../../data/Data';
 const Beers = () => {
     const [dollar, setDollar] = useState(500);
     const [changeDollar, setChangeDollar] = useState(false);
-    const [beers, setBeers] = useState(initialBeers); 
+    const [beers, setBeers] = useState(initialBeers);
 
     const setDollarHandler = (dollarPriceNow) => {
         setDollar(dollarPriceNow);
     }
 
     const changeDollarHandler = () => {
-        setChangeDollar((prevState)=>!prevState);
+        setChangeDollar((prevState) => !prevState);
     }
 
     const addBeerHandler = (newBeer) => {
-        setBeers((prevBeers) => [...prevBeers, newBeer]); 
+        setBeers((prevBeers) => [...prevBeers, newBeer]);
     }
 
     return (
         <div>
-            <button type="button" className="btn btn-primary" onClick={changeDollarHandler}>{changeDollar ? 'Esconder': 'Actualizar precio del dolar' }</button>
-            {changeDollar && <ChangeDollar onDollarChange={setDollarHandler} dollar={dollar}/>}
-            <hr/>
-            <h1>EJERCICIO 1</h1>
+            <button type="button" className="btn btn-primary" onClick={changeDollarHandler}>
+                {changeDollar ? 'Esconder' : 'Actualizar precio del dolar'}
+            </button>
+            {changeDollar && <ChangeDollar onDollarChange={setDollarHandler} dollar={dollar} />}
+            <hr />
+            <h1>EJERCICIO BEERS</h1>
             <div className='beers'>
-            {beers.map((beer) =>
-                <BeerItem key={beer.id} id={beer.id} beerName={beer.beerName} beerStyle={beer.beerStyle} price={beer.price * dollar} available={beer.available} />
-            )}
+                {beers.map((beer) =>
+                    <BeerItem key={beer.id} id={beer.id} beerName={beer.beerName} beerStyle={beer.beerStyle} price={beer.price * dollar} available={beer.available} />
+                )}
             </div>
 
             <h1>EJERCICIO COUNT</h1>
             <CountBeer beers={beers} />
             <hr />
-            
+
             <h1>EJERCICIO STYLES</h1>
-            <BeerStyles beers={beers}/>
-            
+            <BeerStyles beers={beers} />
+
             <h1>EJERCICIO FORM</h1>
-            <NewBeer onAddBeer={addBeerHandler}/>
+            <NewBeer onAddBeer={addBeerHandler} />
         </div>
     )
 }

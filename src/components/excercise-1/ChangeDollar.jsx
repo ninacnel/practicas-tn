@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 const ChangeDollar = ({ onDollarChange, dollar }) => {
-
     const ChangeDollarHandler = (event) => {
         onDollarChange(event.target.value);
     }
