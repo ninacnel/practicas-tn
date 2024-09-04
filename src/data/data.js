@@ -64,7 +64,7 @@ export const beers = [
     },
 ];
 
-export const products = ["table", "couch", "chair1", "chair2"];
+export const products = ["table", "table", "chair1", "chair2"];
 
 export const names = ["Parker","Simmons","Lewis","Poe"];
 

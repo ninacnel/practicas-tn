@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const Product = ({ name }) => {
     return (
@@ -6,6 +6,10 @@ const Product = ({ name }) => {
             <p>Producto: {name}</p>
         </div>
     );
+}
+
+Product.propTypes = {
+    name: PropTypes.string,
 }
 
 export default Product;

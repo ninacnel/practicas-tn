@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import FamilyMember from "./FamilyMember";
 
 const Family = ({ persons }) => {

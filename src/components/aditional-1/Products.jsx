@@ -12,6 +12,7 @@ const Products = ({ products }) => {
 };
 
 Products.propTypes = {
-    products: PropTypes.arrayOf(PropTypes.string).isRequired,
+    products: PropTypes.arrayOf(PropTypes.string),
 };
+
 export default Products;
